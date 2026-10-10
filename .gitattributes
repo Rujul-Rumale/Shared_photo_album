@@ -1,0 +1,9 @@
+# Normalize line endings across platforms (repo stores LF)
+* text=auto
+
+# Keep these exact as committed
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary

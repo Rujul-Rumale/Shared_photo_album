@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  # ─── FastAPI Backend ─────────────────────────────────────────────
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: shared_album_api
+    restart: unless-stopped
+    env_file:
+      - .env
+    expose:
+      - "8000"
+    volumes:
+      - /opt/shared-album/database:/opt/shared-album/database
+      - /opt/shared-album/uploads:/opt/shared-album/uploads
+      - /opt/shared-album/logs:/opt/shared-album/logs
+      - /opt/shared-album/backups:/opt/shared-album/backups
+    command: >
+      sh -c "python scripts/seed_data.py && 
+             uvicorn app.main:app --host 0.0.0.0 --port 8000"
+
+  # ─── Caddy Reverse Proxy (Automatic HTTPS via Let's Encrypt / nip.io) ─
+  caddy:
+    image: caddy:2-alpine
+    container_name: shared_album_caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file:
+      - .env
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+
+volumes:
+  caddy_data:
+  caddy_config:

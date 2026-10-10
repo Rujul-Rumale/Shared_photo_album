@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# Build & Output
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+
+# Databases & Upload Buffers
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+logs/
+backups/
+
+# Environment Variables & Credentials (never commit keys)
+.env
+.env.local
+.env.*.local
+*credentials*.json
+*service-account*.json
+*-key.json
+
+# IDE & OS Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
