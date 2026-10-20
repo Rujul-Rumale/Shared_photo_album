@@ -182,3 +182,7 @@ backend smoke path (`seed_data.py` + `/health`) before submitting.
 ## License
 
 MIT — use it for your group, your event, your community. See [LICENSE](LICENSE).
+
+---
+
+![Views](https://komarev.com/ghpvc/?username=Rujul-Rumale&repo=Shared_photo_album&label=Views&color=0e75b6)
