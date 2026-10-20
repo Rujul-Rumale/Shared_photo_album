@@ -185,4 +185,4 @@ MIT — use it for your group, your event, your community. See [LICENSE](LICENSE
 
 ---
 
-![Views](https://komarev.com/ghpvc/?username=Rujul-Rumale&repo=Shared_photo_album&label=Views&color=0e75b6)
+![Views](https://hits.sh/github.com/Rujul-Rumale/Shared_photo_album.svg?style=flat-square&label=views&color=0e75b6&labelColor=555)
